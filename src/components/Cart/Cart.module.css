@@ -1,0 +1,37 @@
+.carts__items {
+  position: relative;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  width: 32%;
+  height: 275px;
+  border-radius: 8px;
+}
+
+.carts__items img {
+  width: 100%;
+  background-size: cover;
+}
+
+.carts__info {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.75);
+  color: #000000;
+  z-index: 1;
+  width: 100%;
+  padding: 0px 15px;
+  box-sizing: border-box;
+  bottom: -118px;
+
+  transition: bottom 1s ease;
+}
+
+.carts__info h2 {
+  margin-top: 5px;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.carts__items:hover .carts__info {
+  bottom: 0;
+}

@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+
+.body {
+  width: 1120px;
+  color: white;
+  margin: 0 auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.carts {
+  margin: 45px 0 45px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+}
