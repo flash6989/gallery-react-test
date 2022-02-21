@@ -6,19 +6,19 @@
 }
 
 .filter__name input::placeholder {
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .filter__name input {
   width: 265px;
   padding: 14px 15px;
-  background: #0c0c0c;
-  border: 1px solid #ffffff;
+  background: #ffffff;
+  border: 1px solid #000000;
   box-sizing: border-box;
   border-radius: 8px;
   font-size: 13px;
   font-weight: 400;
-  color: white;
+  color: rgb(0, 0, 0);
 
   line-height: 15px;
 }
@@ -43,14 +43,14 @@
 }
 
 .filter__span {
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   box-sizing: border-box;
   display: inline-block;
   border-radius: 8px;
   width: 265px;
   padding: 14px 15px;
   font-weight: 400;
-  color: #ffffff;
+  color: #000000;
   font-size: 13px;
   line-height: 15px;
   position: relative;
@@ -70,14 +70,15 @@
 
 .filter__ul {
   position: absolute;
-  background: #000000;
-  border: 1px solid #ffffff;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid #000000;
+  border-top: 1px solid rgba(8, 8, 8, 0.3);
   border-radius: 0 0 8px 8px;
+  background: #ffffff;
   overflow: auto;
   height: 220px;
   margin: 0;
   padding: 0;
+  color: #000000;
   height: 305;
   padding-top: 8px;
   z-index: 1;
@@ -92,16 +93,12 @@
 }
 
 .filter__ul::-webkit-scrollbar {
-  width: 18px;
+  width: 9px;
 }
 
 .filter__ul::-webkit-scrollbar-thumb {
-  border: 5px solid transparent;
+  background-color: #7b7b7b;
   border-radius: 10px;
-
-  background: #7b7b7b;
-  background-clip: content-box;
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .filter__author ul li {
@@ -115,20 +112,20 @@
 }
 
 .filter__author ul li:hover {
-  background: #ffffff;
-  color: #000000;
+  background: #000000;
+  color: #ffffff;
   display: block;
 }
 
 .filter__location span {
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   box-sizing: border-box;
   display: inline-block;
   border-radius: 8px;
   width: 265px;
   padding: 14px 15px;
   font-weight: 400;
-  color: #ffffff;
+  color: #000000;
   font-size: 13px;
   line-height: 15px;
   position: relative;
@@ -173,20 +170,20 @@
 }
 
 .filter__location ul li:hover {
-  background: #ffffff;
-  color: #000000;
+  background: #000000;
+  color: #ffffff;
   display: block;
 }
 
 .filter__created span {
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   box-sizing: border-box;
   display: inline-block;
   border-radius: 8px;
   width: 265px;
   padding: 14px 15px;
   font-weight: 400;
-  color: #ffffff;
+  color: #000000;
   font-size: 13px;
   line-height: 15px;
   position: relative;
@@ -231,10 +228,10 @@
   justify-content: center;
   position: absolute;
   z-index: 1;
-  background: #000000;
+  background: #ffffff;
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #ffffff;
+  border: 1px solid #000000;
   border-radius: 0 0 8px 8px;
   margin: 0;
   top: 44px;
@@ -254,6 +251,7 @@
 .filter__input input {
   box-sizing: border-box;
   border: 0;
+  background: #efefef;
   width: 95px;
   padding: 15px;
   border-radius: 8px;

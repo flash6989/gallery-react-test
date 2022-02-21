@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 
 import styles from "./Header.module.css";
 
-function Header() {
+function Header({ setIsLight, isLight }) {
   let location = useLocation();
   return (
     <header className={styles.header}>
@@ -13,7 +13,17 @@ function Header() {
         </Link>
       </div>
       <div className={styles.header__toggle}>
-        <img src="./img/togglelight.png" alt="" />
+        <img
+          onClick={() => {
+            setIsLight(!isLight);
+          }}
+          src={
+            isLight
+              ? "./img/togglelight.png"
+              : "./img/toggle-theme-for-black.png"
+          }
+          alt=""
+        />
       </div>
     </header>
   );

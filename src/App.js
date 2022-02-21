@@ -5,7 +5,7 @@ import { fetchAuthorsLocations } from "./functions/fetch/fetchAuthorsLocations";
 import { fetchAllPaints } from "./functions/fetch/fetchAllPaints";
 import { fetchAllParam } from "./functions/fetch/fetchAllParam";
 
-//функции параметры
+//функции => параметры
 import { parametrAuthorsId } from "./functions/paramUrl/parametrAuthorsId";
 import { parametrLocationId } from "./functions/paramUrl/parametrLocationId.js";
 import { parametrInputName } from "./functions/paramUrl/parametrInputName";
@@ -19,6 +19,7 @@ import { calcPageQty } from "./functions/calc/calcPageQty";
 
 //стили
 import styles from "./App.module.css";
+import stylesLight from "./AppLight.module.css";
 
 //компоненты
 import Cart from "./components/Cart/Cart";
@@ -34,6 +35,11 @@ const queryString = require("query-string");
 const BASE_URL = "https://test-front.framework.team/paintings";
 
 function App() {
+  //STATES
+
+  //переключение темы
+  const [isLight, setIsLight] = useState(true);
+
   //пункты меню
 
   const [inputValue, setInputValue] = useState("");
@@ -62,14 +68,11 @@ function App() {
 
   let urlLoc = local.search;
 
+  //получение всех картин локаций и авторов для пунктов меню и подсчета начального количecтва страниц при пустой адресной строке
   useEffect(() => {
     async function fetchPal() {
-      //получение всех картин локаций и авторов для пунктов меню и подсчета начального количecтва страниц
       await fetchAuthorsLocations(setAllAuthors, setLocations);
     }
-
-    console.log(local.search, "URLLOCK4");
-    console.log(urlInit, "URLLOCK4A");
     fetchPal();
   }, []);
 
@@ -241,44 +244,57 @@ function App() {
     });
   }, []);
 
+  isLight
+    ? (document.body.style.background = "black")
+    : (document.body.style.background = "white");
+
   return (
-    <div className={styles.body}>
-      <Header />
+    <div className={isLight ? styles.full_display : stylesLight.full_display}>
+      <div className={isLight ? styles.body : stylesLight.body}>
+        <Header setIsLight={setIsLight} isLight={isLight} />
 
-      <Filters
-        // url={url}
-        setPage={setPage}
-        activeName={activeName}
-        setActiveName={setActiveName}
-        activeLocation={activeLocation}
-        setActiveLocation={setActiveLocation}
-        fetchAllParam={fetchAllParam}
-        setActiveAuthorId={setActiveAuthorId}
-        authors={allAuthors}
-        locations={locations}
-        activeLocationId={activeLocationId}
-        setActiveLocationId={setActiveLocationId}
-        setAuthors={setAllAuthors}
-        value={inputValue}
-        setValue={setInputValue}
-        valueFrom={valueFrom}
-        setValueFrom={setValueFrom}
-        valueBefore={valueBefore}
-        setValueBefore={setValueBefore}
-      />
+        <Filters
+          // url={url}
+          isLight={isLight}
+          setPage={setPage}
+          activeName={activeName}
+          setActiveName={setActiveName}
+          activeLocation={activeLocation}
+          setActiveLocation={setActiveLocation}
+          fetchAllParam={fetchAllParam}
+          setActiveAuthorId={setActiveAuthorId}
+          authors={allAuthors}
+          locations={locations}
+          activeLocationId={activeLocationId}
+          setActiveLocationId={setActiveLocationId}
+          setAuthors={setAllAuthors}
+          value={inputValue}
+          setValue={setInputValue}
+          valueFrom={valueFrom}
+          setValueFrom={setValueFrom}
+          valueBefore={valueBefore}
+          setValueBefore={setValueBefore}
+        />
 
-      <div className={styles.carts}>
-        {paintings.map((paint) => (
-          <Cart
-            allAuthors={allAuthors}
-            locations={locations}
-            paintItem={paint}
-            key={paint.id}
-            {...paint}
-          />
-        ))}
+        <div className={styles.carts}>
+          {paintings.map((paint) => (
+            <Cart
+              isLight={isLight}
+              allAuthors={allAuthors}
+              locations={locations}
+              paintItem={paint}
+              key={paint.id}
+              {...paint}
+            />
+          ))}
+        </div>
+        <Selectors
+          isLight={isLight}
+          setPage={setPage}
+          page={page}
+          pageQty={pageQty}
+        />
       </div>
-      <Selectors setPage={setPage} page={page} pageQty={pageQty} />
     </div>
   );
 }

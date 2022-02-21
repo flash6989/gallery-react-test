@@ -18,16 +18,14 @@ function Cart({
       <div className={styles.carts__info}>
         <h2>{name}</h2>
         <p>
-          <b>Author: {authorName ? authorName.name : ""} </b>
+          <b>Author:</b> {authorName ? authorName.name : ""}
         </p>
         <p>
-          <b>Created: {created} </b>
+          <b>Created:</b> {created}
         </p>
         <p>
-          <b>
-            Location:{" "}
-            {locations.find((location) => location.id === locationId).location}
-          </b>
+          <b>Location: </b>
+          {locations.find((location) => location.id === locationId).location}
         </p>
       </div>
     </div>
