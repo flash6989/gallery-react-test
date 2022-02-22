@@ -1,0 +1,245 @@
+.filter {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  span {
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 8px;
+    width: 265px;
+    padding: 14px 15px;
+    font-weight: 400;
+    color: #000000;
+    font-size: 13px;
+    line-height: 15px;
+    position: relative;
+    cursor: pointer;
+    transition: all ease 0.9s;
+  }
+
+  ul {
+    position: absolute;
+    border: 1px solid #000000;
+    border-top: 1px solid rgba(8, 8, 8, 0.3);
+    border-radius: 0 0 8px 8px;
+    background: #ffffff;
+    overflow: auto;
+    height: 220px;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    height: 305;
+    padding-top: 8px;
+    z-index: 1;
+    width: 263px;
+    top: 44px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease-in 0.3s, border-top ease 2.5s;
+    &::-webkit-scrollbar {
+      width: 18px;
+    }
+    &::-webkit-scrollbar-thumb {
+      border: 5px solid transparent;
+      border-radius: 10px;
+
+      background: #7b7b7b;
+      background-clip: content-box;
+    }
+  }
+}
+
+.filter__name {
+  input {
+    width: 265px;
+    padding: 14px 15px;
+    background: #ffffff;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+    line-height: 15px;
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.3);
+    }
+
+    &:focus {
+      outline: 0;
+      outline-offset: 0;
+    }
+  }
+}
+
+.filter__author {
+  position: relative;
+  ul {
+    li {
+      list-style: none;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 0px 0;
+      padding: 10px 15px;
+      cursor: pointer;
+
+      &:hover {
+        background: #000000;
+        color: #ffffff;
+        display: block;
+      }
+    }
+  }
+  &:hover span {
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+  }
+
+  &:hover ul {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  span {
+    &::before {
+      content: "";
+      background: url("../../img/strelka.png") no-repeat;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      top: 20px;
+      right: 10px;
+    }
+  }
+}
+
+.filter__location {
+  ul {
+    li {
+      list-style: none;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 0px 0;
+      padding: 10px 15px;
+      cursor: pointer;
+      &:hover {
+        background: #000000;
+        color: #ffffff;
+        display: block;
+      }
+    }
+  }
+
+  &:hover ul {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:hover span {
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+  }
+  position: relative;
+  span {
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 8px;
+    width: 265px;
+    padding: 14px 15px;
+    font-weight: 400;
+    color: #000000;
+    font-size: 13px;
+    line-height: 15px;
+    position: relative;
+    cursor: pointer;
+    &::before {
+      content: "";
+      background: url("../../img/strelka.png") no-repeat;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      top: 20px;
+      right: 10px;
+    }
+  }
+}
+
+.filter__created {
+  &:hover .filter__input {
+    visibility: visible;
+    opacity: 1;
+    border-top: #ffffff;
+  }
+  &:hover span {
+    border-bottom: 0;
+    border-radius: 8px 8px 0 0;
+  }
+  position: relative;
+  span {
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 8px;
+    width: 265px;
+    padding: 14px 15px;
+    font-weight: 400;
+    color: #000000;
+    font-size: 13px;
+    line-height: 15px;
+    position: relative;
+    transition: all ease 0.9s;
+    cursor: pointer;
+    &::before {
+      content: "";
+      background: url("../../img/strelka.png") no-repeat;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      top: 20px;
+      right: 10px;
+    }
+  }
+}
+
+.filter__input {
+  input {
+    box-sizing: border-box;
+    border: 0;
+    background: #efefef;
+    width: 95px;
+    padding: 15px;
+    border-radius: 8px;
+    outline: 0;
+    outline-offset: 0;
+  }
+
+  img {
+    background: #000000;
+    position: absolute;
+    top: 38px;
+    height: 1px;
+  }
+  padding: 15px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  position: absolute;
+  z-index: 1;
+  background: #ffffff;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #000000;
+  border-radius: 0 0 8px 8px;
+  margin: 0;
+  top: 44px;
+  visibility: hidden;
+  opacity: 0;
+
+  transition: all ease-in 0.3s, border-top ease 2.5s;
+}

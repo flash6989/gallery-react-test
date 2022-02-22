@@ -1,6 +1,6 @@
-import styles from "./Cart.module.css";
+import styles from "./Cart.module.scss";
 
-function Cart({
+const Cart = ({
   imageUrl,
   name,
   created,
@@ -8,9 +8,8 @@ function Cart({
   authorId,
   allAuthors,
   locations,
-}) {
+}) => {
   let authorName = allAuthors.find((author) => author.id === authorId);
-  console.log(authorName, "authorName");
   return (
     <div className={styles.carts__items}>
       <img src={`https://test-front.framework.team/${imageUrl}`} alt="" />
@@ -30,6 +29,6 @@ function Cart({
       </div>
     </div>
   );
-}
+};
 
 export default Cart;

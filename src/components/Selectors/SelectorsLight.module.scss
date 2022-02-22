@@ -1,0 +1,51 @@
+.selector {
+  ul {
+    display: flex;
+    margin: 0;
+    padding-bottom: 16px;
+    li {
+      padding: 10px 14px;
+      box-sizing: border-box;
+      text-transform: uppercase;
+      list-style: none;
+    }
+  }
+}
+
+.selector__radiusleft {
+  border-radius: 8px 0 0 8px;
+}
+
+.selector__radiusright {
+  border-radius: 0 8px 8px 0;
+}
+
+.selector__radiusnoactive {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  cursor: auto;
+}
+
+.selector__activeradius {
+  border: 1px solid #000000;
+  cursor: pointer;
+  color: #000000;
+
+  &:hover {
+    background: #ededed;
+  }
+}
+
+.selector__active {
+  background: #ffffff;
+  text-decoration: none;
+  color: #000000;
+}
+
+.selector__activepage {
+  background: #000000;
+  color: rgb(255, 255, 255);
+}
+
+.flexDirection {
+  display: flex;
+}
