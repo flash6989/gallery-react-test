@@ -242,9 +242,9 @@ const App = () => {
               key={paint.id}
               imageUrl={paint.imageUrl}
               name={paint.name}
-              created={paint.created}
+              created={+paint.created}
               locationId={paint.locationId}
-              authorId={paint.authorId}
+              authorId={+paint.authorId}
             />
           ))}
         </div>

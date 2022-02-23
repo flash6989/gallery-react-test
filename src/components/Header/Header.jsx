@@ -1,4 +1,5 @@
 import styles from "./Header.module.scss";
+import PropTypes from "prop-types";
 
 const Header = ({ setIsDark, isDark }) => {
   return (
@@ -16,6 +17,11 @@ const Header = ({ setIsDark, isDark }) => {
       />
     </header>
   );
+};
+
+Header.propTypes = {
+  setIsDark: PropTypes.func.isRequired,
+  isDark: PropTypes.bool.isRequired,
 };
 
 export default Header;

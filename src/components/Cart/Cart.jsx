@@ -1,4 +1,5 @@
 import styles from "./Cart.module.scss";
+import PropTypes from "prop-types";
 
 const Cart = ({
   imageUrl,
@@ -29,6 +30,16 @@ const Cart = ({
       </div>
     </div>
   );
+};
+
+Cart.propTypes = {
+  imageUrl: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  created: PropTypes.number.isRequired,
+  locationId: PropTypes.number.isRequired,
+  authorId: PropTypes.number.isRequired,
+  allAuthors: PropTypes.array,
+  locations: PropTypes.array,
 };
 
 export default Cart;

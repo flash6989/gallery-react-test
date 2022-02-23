@@ -1,6 +1,8 @@
 import styles from "./Filters.module.scss";
 import stylesDark from "./FiltersLight.module.scss";
 
+import PropTypes from "prop-types";
+
 const Filters = ({
   setPage,
   setValue,
@@ -129,6 +131,25 @@ const Filters = ({
       </div>
     </div>
   );
+};
+
+Filters.propTypes = {
+  setPage: PropTypes.func.isRequired,
+  setValue: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  setActiveAuthorId: PropTypes.func.isRequired,
+  locations: PropTypes.array,
+  setActiveLocationId: PropTypes.func.isRequired,
+  valueFrom: PropTypes.oneOfType([PropTypes.number, PropTypes.any]),
+  authorId: PropTypes.number,
+  setValueFrom: PropTypes.func.isRequired,
+  valueBefore: PropTypes.oneOfType([PropTypes.number, PropTypes.any]),
+  setValueBefore: PropTypes.func.isRequired,
+  isDark: PropTypes.bool.isRequired,
+  activeName: PropTypes.string.isRequired,
+  setActiveName: PropTypes.func.isRequired,
+  activeLocation: PropTypes.string.isRequired,
+  setActiveLocation: PropTypes.func.isRequired,
 };
 
 export default Filters;

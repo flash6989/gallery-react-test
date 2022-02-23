@@ -14,7 +14,7 @@ body {
 
 .container {
   padding: 0 24px;
-  width: 1180px;
+  width: 1120px;
   color: rgb(255, 255, 255);
   margin: 0 auto;
 }
@@ -23,6 +23,24 @@ body {
   margin: 45px 0 45px 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 23.5px;
+  gap: 20px;
   justify-content: flex-start;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 940px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 700px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    width: 280px;
+  }
 }

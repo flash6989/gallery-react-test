@@ -1,5 +1,6 @@
 import styles from "./Selectors.module.scss";
 import stylesLight from "./SelectorsLight.module.scss";
+import PropTypes from "prop-types";
 
 export const PageCount = ({ setPage, page, left, count, right, isDark }) => {
   const radiusActive = isDark
@@ -40,4 +41,13 @@ export const PageCount = ({ setPage, page, left, count, right, isDark }) => {
       </li>
     </>
   );
+};
+
+PageCount.propTypes = {
+  page: PropTypes.number.isRequired,
+  left: PropTypes.number.isRequired,
+  count: PropTypes.number.isRequired,
+  right: PropTypes.number.isRequired,
+  isDark: PropTypes.bool.isRequired,
+  setPage: PropTypes.func.isRequired,
 };

@@ -1,6 +1,7 @@
 import { ArrowLeft } from "./ArrowLeft";
 import { ArrowRight } from "./ArrowRight";
 import { PageCount } from "./PageCount";
+import PropTypes from "prop-types";
 import styles from "./Selectors.module.scss";
 
 const Selectors = ({ pageQty, page, setPage, isDark }) => {
@@ -124,6 +125,14 @@ const Selectors = ({ pageQty, page, setPage, isDark }) => {
       )}
     </div>
   );
+};
+
+Selectors.propTypes = {
+  pageQty: PropTypes.number.isRequired,
+  page: PropTypes.number.isRequired,
+
+  setPage: PropTypes.func.isRequired,
+  isDark: PropTypes.bool.isRequired,
 };
 
 export default Selectors;

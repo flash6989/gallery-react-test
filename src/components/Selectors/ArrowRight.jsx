@@ -1,5 +1,6 @@
 import styles from "./Selectors.module.scss";
 import stylesLight from "./SelectorsLight.module.scss";
+import PropTypes from "prop-types";
 
 export const ArrowRight = ({ setPage, page, pageQty, isDark }) => {
   const radiusActive = isDark
@@ -59,4 +60,11 @@ export const ArrowRight = ({ setPage, page, pageQty, isDark }) => {
       </li>
     </>
   );
+};
+
+ArrowRight.propTypes = {
+  pageQty: PropTypes.number.isRequired,
+  setPage: PropTypes.func.isRequired,
+  page: PropTypes.number.isRequired,
+  isDark: PropTypes.bool.isRequired,
 };

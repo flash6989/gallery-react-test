@@ -12,8 +12,28 @@ body {
 }
 
 .container {
-  width: 1180px;
+  padding: 0 24px;
+
+  width: 1120px;
   color: rgb(255, 255, 255);
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    width: 940px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 700px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    width: 280px;
+  }
 }
